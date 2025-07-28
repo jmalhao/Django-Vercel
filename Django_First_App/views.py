@@ -13,7 +13,7 @@ def home(request):
   return HttpResponse("Hello world!")
 
 def main(request):
-  template = loader.get_template('main.html') # main.html ou index.html
+  template = loader.get_template('index.html') # main.html ou index.html
   return HttpResponse(template.render())
 
 def home_view(request,*args, **kwargs):

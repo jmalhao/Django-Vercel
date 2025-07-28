@@ -1,7 +1,8 @@
-"""Django_Vercel URL Configuration
+"""
+URL configuration for Django project.
 
 The `urlpatterns` list routes URLs to views. For more information please see:
-    https://docs.djangoproject.com/en/3.2/topics/http/urls/
+    https://docs.djangoproject.com/en/4.2/topics/http/urls/
 Examples:
 Function views
     1. Add an import:  from my_app import views
@@ -14,8 +15,40 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
+from django.urls import include, path
+
+urlpatterns = [
+    path('Django_First_App/', include('Django_First_App.urls')),
+    path('admin/', admin.site.urls),
+    #path('', admin.site.urls),
+    path('', include('Django_First_App.urls')),
+    
+]
+"""
+from django.urls import path
+
+#from . import views
+
+urlpatterns = [
+    #path("", views.index, name="index"),
+    #path("", views.Django_First_App, name="Django_First_App"),
+]
+"""
+
+"""
+from django.urls import path
+from . import views
+
+urlpatterns = [
+    path('Django_First_App/', views.Django_First_App, name='Django_First_App'),
+]
+"""
+"""
+from django.contrib import admin
 from django.urls import path
 
 urlpatterns = [
+    #path('', include('Django_First_App.urls')),
     path('admin/', admin.site.urls),
 ]
+"""
